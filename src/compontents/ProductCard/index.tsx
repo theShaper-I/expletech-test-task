@@ -1,7 +1,18 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-export const ProductCard = ({ product }) => {
+interface Product {
+  id: string;
+  image: string;
+  title: string;
+  price: number;
+}
+
+interface ProductCardProps {
+  product: Product;
+}
+
+export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
     <Link
       href={`/product/${product.id}`}
